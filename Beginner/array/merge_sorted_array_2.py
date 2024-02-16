@@ -1,5 +1,5 @@
 class Solution(object):
-    def merge(self,merge_list):
+    def merge(self,nums1,m,nums2,n):
         """
         :type nums1: List[int]
         :type m: int
@@ -7,26 +7,20 @@ class Solution(object):
         :type n: int
         :rtype: None Do not return anything, modify nums1 in-place instead.
         """
-        
-        list= []
+        nums1[m:m+n] = nums2
         print(nums1)
-        for i in merge_list:
-            if i == 0:
-                continue
-            else:
-                list.append(i)
-        return sorted(list)
-
+     
+        
+        return nums1.sort()
 
 
 solution = Solution()
-nums1 = [0]
+nums1 = [56,1,4,0,0]
 nums2 = [25,2,5,6]
-# merge_list = nums1.extend(nums2)
-merge_list = nums1+nums2
-print(merge_list)
+
+
 m= len(nums1)
 n= len(nums2)
 
-result = solution.merge(merge_list)
+result = solution.merge(nums1,m,nums2,n)
 print('result ',result)
